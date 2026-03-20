@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primary: #0cebeb;
-  --secondary: #20e3b2;
-  --text-dark: #111;
-  --text-light: #666;
-  --bg-color: #ffffff;
-  --border-color: rgba(0,0,0,0.08);
+  --bg-color: #030303;
+  --text-dark: #fff;
+  --text-light: #888;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --accent-vite: #9A30FF;
+  --accent-viteplus: #8e2de2;
+  --accent-vitest: #00E676;
+  --accent-rolldown: #FF512F;
+  --accent-oxc: #00e0ff;
 }
 
 body {
@@ -33,8 +36,9 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(3, 3, 3, 0.6);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 1000;
   border-bottom: 1px solid var(--border-color);
 }
@@ -46,6 +50,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  color: #fff;
 }
 
 .nav-links {
@@ -55,14 +60,14 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #555;
+  color: #999;
   font-size: 14px;
   font-weight: 500;
   transition: color 0.2s;
 }
 
 .nav-links a:hover {
-  color: #000;
+  color: #fff;
 }
 
 /* Hero Section */
@@ -71,36 +76,74 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 140px;
-  background: radial-gradient(circle at 50% 0%, rgba(240, 248, 255, 0.5) 0%, #ffffff 80%);
+  padding-top: 100px;
+  background: radial-gradient(circle at 50% 10%, rgba(20, 20, 30, 0.6) 0%, var(--bg-color) 70%);
+}
+
+.prod-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 16px;
+  border-radius: 40px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #aaa;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(5px);
+}
+
+.blink-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00E676;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00E676;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
 }
 
 .hero-text {
   text-align: center;
   max-width: 800px;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   z-index: 10;
 }
 
 .hero-title {
-  font-size: 64px;
+  font-size: 72px;
   font-weight: 600;
-  letter-spacing: -2.5px;
+  letter-spacing: -3px;
   line-height: 1.1;
   margin: 0 0 24px 0;
-  color: #111;
+  color: #fff;
 }
 
 .gradient-text {
-  /* Typical Vercel/VoidZero gradient style */
-  background: linear-gradient(to right, #00d2ff, #3a7bd5);
+  background: linear-gradient(90deg, #fff, #888, #fff);
+  background-size: 200% auto;
+  color: transparent;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: 0% center; }
 }
 
 .hero-subtitle {
   font-size: 22px;
-  color: #666;
+  color: #888;
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
@@ -110,35 +153,219 @@ body {
 /* Container for the 3D scene */
 .scene-container {
   width: 100%;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   perspective: 2500px;
-  margin-top: 20px;
 }
 
 /* 3D Stack Base */
 .isometric-stack {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 300px;
+  height: 300px;
   transform-style: preserve-3d;
-  /* Adjust isometric rotation to match reference exactly */
+  /* VoidZero precise Isometric angle */
   transform: rotateX(60deg) rotateZ(-45deg);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: rotateX(60deg) rotateZ(-45deg) translateY(0px); }
+  50% { transform: rotateX(60deg) rotateZ(-45deg) translateY(-20px); }
 }
 
 .layer {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* The box geometry */
+.box-render {
+  position: absolute;
   transform-style: preserve-3d;
-  transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  background: rgba(5, 5, 5, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Top face */
+.box-top {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translateZ(0);
+}
+
+/* Aurora Glow for Vite+ */
+.aurora-wrapper {
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.aurora-glow {
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(from 0deg, #4A00E0, #00d2ff, #8a2be2, #4A00E0);
+  filter: blur(25px);
+  animation: spin 3s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Pulse for Rolldown */
+.pulse-box .box-top {
+  border: 1px solid #FF512F;
+  box-shadow: 0 0 15px rgba(255, 81, 47, 0.6), inset 0 0 15px rgba(255, 81, 47, 0.6);
+  animation: box-pulse 2s ease-in-out infinite;
+}
+
+@keyframes box-pulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(255, 81, 47, 0.4), inset 0 0 10px rgba(255, 81, 47, 0.3); }
+  50% { box-shadow: 0 0 35px rgba(255, 81, 47, 0.8), inset 0 0 25px rgba(255, 81, 47, 0.6); }
+}
+
+/* Side faces to give depth simulating void zero */
+.box-side-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  transform-origin: right top;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.box-side-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  transform-origin: left bottom;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Line connections */
+.connection-line {
+  position: absolute;
+  height: 2px;
+  background: transparent;
+  transform-origin: center;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.line-svg {
+  width: 100%;
+  height: 4px;
+  overflow: visible;
+}
+
+.line-path {
+  stroke-dasharray: 6, 6;
+  animation: flow-line 0.8s linear infinite;
+  stroke: rgba(255, 255, 255, 0.4);
+}
+
+.line-path.forward {
+  animation-direction: normal;
+}
+
+.line-path.backward {
+  animation-direction: reverse;
+}
+
+@keyframes flow-line {
+  to { stroke-dashoffset: -12; }
+}
+
+/* Annotation Badge */
+.annotation-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(10, 10, 10, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
+  padding: 6px 14px 6px 8px;
+  color: #fff;
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  z-index: 20;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* We must un-rotate the badge so it stands up straight facing the camera */
+/* The scene is rotateX(60deg) rotateZ(-45deg). */
+.unrotate {
+  transform: rotateZ(45deg) rotateX(-60deg);
+  transform-style: preserve-3d;
+}
+
+.badge-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+}
+
+.badge-text {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.badge-desc {
+  position: absolute;
+  top: -20px;
+  font-size: 11px;
+  color: #888;
+  font-weight: 500;
+}
+
+.left-desc {
+  right: 16px;
+}
+
+.right-desc {
+  left: 16px;
+}
+
+/* Center icon on top of box */
+.center-icon-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(1px); /* Slight bump up */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
 }
 
 /* Content Sections below Hero */
@@ -157,7 +384,7 @@ body {
 
 .section-subtitle {
   font-size: 20px;
-  color: #666;
+  color: #888;
   max-width: 700px;
   margin-bottom: 60px;
   line-height: 1.5;
@@ -174,14 +401,14 @@ body {
   border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 32px;
-  background: #fff;
-  transition: box-shadow 0.3s, transform 0.3s;
+  background: #111;
+  transition: transform 0.3s;
   cursor: pointer;
 }
 
 .tool-card:hover {
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
   transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .tool-header {
@@ -198,7 +425,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fafafa;
+  background: #1a1a1a;
 }
 
 .tool-name {
@@ -208,7 +435,7 @@ body {
 }
 
 .tool-desc {
-  color: #666;
+  color: #888;
   line-height: 1.6;
   font-size: 15px;
 }
@@ -230,18 +457,19 @@ body {
   text-decoration: none;
   color: inherit;
   transition: background 0.2s;
+  background: #111;
 }
 
 .news-item:hover {
-  background: #fafafa;
+  background: #1a1a1a;
 }
 
 .news-tag {
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
-  color: #666;
-  background: #f0f0f0;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
   padding: 4px 12px;
   border-radius: 20px;
 }
