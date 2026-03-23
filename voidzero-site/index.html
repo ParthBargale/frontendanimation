@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VoidZero | The JavaScript Tooling Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-logo">
+    <svg viewBox="0 0 91 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M27.3271 0C33.439 2.66469e-05 36.6504 2.56908 36.6504 7.5C36.6503 12.4308 33.4389 15 27.3271 15C21.2156 14.9999 18.0245 12.4307 18.0244 7.5C18.0244 2.56914 21.2155 9.51756e-05 27.3271 0ZM70.0195 0C67.0714 4.22099 67.0541 10.7638 70.0195 15H68.0273C65.0612 10.7638 65.0785 4.22098 68.0273 0H70.0195ZM88.2852 0C91.2333 4.22097 91.2506 10.7638 88.2852 15H86.293C89.2591 10.7638 89.2418 4.22099 86.293 0H88.2852ZM78.1562 0.0205078C82.2875 0.0205671 85.6357 3.36945 85.6357 7.5C85.6357 11.6306 82.2868 14.9794 78.1562 14.9795C74.0257 14.9795 70.6768 11.6306 70.6768 7.5C70.6768 3.36943 74.0257 0.0205323 78.1562 0.0205078ZM9.13672 10.6904L12.9072 0.249023H18.0664L12.3477 14.751H5.71777L0 0.249023H5.30371L9.13672 10.6904ZM43.5293 14.751H38.5566V0.249023H43.5293V14.751ZM55.166 0.249023C60.2005 0.249035 63.0801 2.52763 63.0801 7.5C63.08 12.4722 60.1798 14.7509 55.1455 14.751H46.0498V0.249023H55.166Z" fill="white"/>
+    </svg>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#oss">Open Source</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#">Void</a></li>
+  </ul>
+  <div class="live-badge">
+    <div class="live-dot"></div>
+    prod server / running
+  </div>
+  <button class="nav-cta" style="margin-left:1rem;">Get started</button>
+</nav>
+
+<!-- ─── ANNOUNCEMENT BAR ─── -->
+<div class="announcement-bar" onclick="window.open('#','_blank')">
+  <svg viewBox="0 0 25 14" fill="none" xmlns="http://www.w3.org/2000/svg" height="16">
+    <path d="M12.0155 13.6774C11.817 13.9301 11.4109 13.7896 11.4109 13.4686V10.3856C11.4109 10.0118 11.1079 9.70883 10.7341 9.70883H7.33014C7.05491 9.70883 6.89441 9.3975 7.0549 9.17383L9.29284 6.04059C9.61319 5.59262 9.29284 4.96997 8.74174 4.96997H4.62231C4.34708 4.96997 4.18658 4.65864 4.34708 4.43498L7.24828 0.372914C7.31209 0.283964 7.41457 0.23111 7.52351 0.23111H16.1691C16.4443 0.23111 16.6048 0.542435 16.4443 0.7661L14.2064 3.89934C13.886 4.34732 14.2064 4.96997 14.7575 4.96997H18.1614C18.4438 4.96997 18.6023 5.29547 18.4277 5.51785L12.0161 13.6781Z" fill="white"/>
+    <path d="M2.07018 0C-0.681998 3.93942 -0.698111 10.0458 2.07018 13.9994H3.92967C1.16203 10.0458 1.17814 3.93942 3.92967 0H2.07018Z" fill="white"/>
+    <path d="M20.9573 6.99969H22.8174C22.8162 4.4847 22.1246 1.971 20.7472 0H18.8877C20.2644 1.971 20.9567 4.4847 20.958 6.99969H20.9573Z" fill="white"/>
+  </svg>
+  <span class="tag">New</span>
+  <span>Announcing Vite+ Alpha: Open source. Unified. Next-gen.</span>
+  <span class="arrow">→</span>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <p class="hero-eyebrow">The JavaScript Tooling Company</p>
+  <h1>Making <em>JavaScript developers</em><br>more productive than ever before.</h1>
+  <p>We build the open source infrastructure powering the modern JavaScript ecosystem — from bundlers to runtimes.</p>
+  <div class="trusted" style="width:100%;margin-top:4rem;">
+    <p class="trusted-label">Trusted by the world's best software teams</p>
+    <div class="logo-marquee-wrapper">
+      <div class="logo-marquee" id="marquee">
+        <div class="logo-item"><span>Shopify</span></div>
+        <div class="logo-item"><span>OpenAI</span></div>
+        <div class="logo-item"><span>Framer</span></div>
+        <div class="logo-item"><span>Linear</span></div>
+        <div class="logo-item"><span>Hugging Face</span></div>
+        <div class="logo-item"><span>Cloudflare</span></div>
+        <div class="logo-item"><span>Mercedes</span></div>
+        <div class="logo-item"><span>Shopify</span></div>
+        <div class="logo-item"><span>OpenAI</span></div>
+        <div class="logo-item"><span>Framer</span></div>
+        <div class="logo-item"><span>Linear</span></div>
+        <div class="logo-item"><span>Hugging Face</span></div>
+        <div class="logo-item"><span>Cloudflare</span></div>
+        <div class="logo-item"><span>Mercedes</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ISO STACK ANIMATION ─── -->
+<section class="iso-section">
+  <p class="iso-section-title">Making JavaScript developers more productive than ever before.</p>
+  <div class="iso-scene" id="isoScene">
+    <svg class="iso-canvas" id="isoCvs" viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"></svg>
+    <div class="iso-layer-label" id="layerLabel" style="opacity:0;"></div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- ─── OSS ─── -->
+<section class="oss-section" id="oss">
+  <div class="container">
+    <span class="section-tag">OSS</span>
+    <h2 class="section-title">Open Source</h2>
+    <p class="section-sub" style="margin-bottom:2.5rem;">We are the creators, maintainers, and contributors of some of the most critical infrastructure projects in the JavaScript ecosystem.</p>
+    <div class="oss-tabs">
+      <button class="oss-tab active" onclick="showTab('viteplus',this)">
+        <svg class="tab-icon" viewBox="0 0 25 14" fill="none"><path d="M12.0155 13.6774C11.817 13.9301 11.4109 13.7896 11.4109 13.4686V10.3856C11.4109 10.0118 11.1079 9.70883 10.7341 9.70883H7.33014C7.05491 9.70883 6.89441 9.3975 7.0549 9.17383L9.29284 6.04059C9.61319 5.59262 9.29284 4.96997 8.74174 4.96997H4.62231C4.34708 4.96997 4.18658 4.65864 4.34708 4.43498L7.24828 0.372914C7.31209 0.283964 7.41457 0.23111 7.52351 0.23111H16.1691C16.4443 0.23111 16.6048 0.542435 16.4443 0.7661L14.2064 3.89934C13.886 4.34732 14.2064 4.96997 14.7575 4.96997H18.1614C18.4438 4.96997 18.6023 5.29547 18.4277 5.51785L12.0161 13.6781Z" fill="currentColor"/></svg>
+        Vite+
+      </button>
+      <button class="oss-tab" onclick="showTab('vite',this)">⚡ Vite</button>
+      <button class="oss-tab" onclick="showTab('vitest',this)">🧪 Vitest</button>
+      <button class="oss-tab" onclick="showTab('rolldown',this)">📦 Rolldown</button>
+      <button class="oss-tab" onclick="showTab('oxc',this)">🔧 Oxc</button>
+    </div>
+
+    <!-- Vite+ -->
+    <div class="oss-card active" id="tab-viteplus">
+      <div>
+        <div class="oss-card-badge"><span style="color:var(--green)">●</span> new</div>
+        <div class="oss-card-title">The unified toolchain for the web</div>
+        <div class="oss-card-desc">Vite+ is the entry point to web application development that manages your runtime, package manager, and frontend toolchain.</div>
+        <a class="oss-card-link" href="#">Explore Vite+ →</a>
+      </div>
+      <div class="oss-card-visual">
+        <div class="line-comment"># Vite+ Alpha — unified toolchain</div><br>
+        <div><span class="line-green">$</span> <span class="line-blue">vp</span> <span class="line-purple">create</span> my-app</div>
+        <div class="line-comment">  ✓ Detected runtime: node 22</div>
+        <div class="line-comment">  ✓ Package manager: npm</div>
+        <div class="line-comment">  ✓ Frontend: vite@8.0</div><br>
+        <div><span class="line-green">$</span> <span class="line-blue">vp</span> <span class="line-purple">dev</span></div>
+        <div style="color:rgba(255,255,255,0.4)">  VITE v8.0.0  ready in 42 ms</div><br>
+        <div style="color:rgba(255,255,255,0.3)">  ➜  Local:   http://localhost:5173/</div>
+        <div style="color:rgba(255,255,255,0.3)">  ➜  Network: http://192.168.1.5:5173/</div>
+      </div>
+    </div>
+
+    <!-- Vite -->
+    <div class="oss-card" id="tab-vite">
+      <div>
+        <div class="oss-card-badge">79.0k stars</div>
+        <div class="oss-card-title">The build tool for the web</div>
+        <div class="oss-card-desc">Vite is the default choice for single-page web applications and the foundation for fullstack frameworks like TanStack Start, Nuxt, SvelteKit and more.</div>
+        <a class="oss-card-link" href="#">Explore Vite →</a>
+        <div class="oss-card-stats">
+          <div class="oss-stat"><span>79.0k</span> stars</div>
+          <div class="oss-stat"><span>1,245</span> contributors</div>
+        </div>
+      </div>
+      <div class="oss-card-visual">
+        <div class="line-comment">// vite.config.ts</div>
+        <div><span class="line-purple">import</span> { defineConfig } <span class="line-purple">from</span> <span class="line-green">'vite'</span></div><br>
+        <div><span class="line-purple">export default</span> <span class="line-blue">defineConfig</span>({</div>
+        <div style="padding-left:1rem"><span class="line-yellow">plugins</span>: [react()],</div>
+        <div style="padding-left:1rem"><span class="line-yellow">build</span>: { <span class="line-yellow">rollupOptions</span>: {} },</div>
+        <div>})</div>
+      </div>
+    </div>
+
+    <!-- Vitest -->
+    <div class="oss-card" id="tab-vitest">
+      <div>
+        <div class="oss-card-badge">16.1k stars</div>
+        <div class="oss-card-title">The next-generation test runner</div>
+        <div class="oss-card-desc">Vitest is a feature-rich test runner that understands your Vite config, is Jest-compatible, and works out-of-the-box with TypeScript & ESM.</div>
+        <a class="oss-card-link" href="#">Explore Vitest →</a>
+        <div class="oss-card-stats">
+          <div class="oss-stat"><span>16.1k</span> stars</div>
+          <div class="oss-stat"><span>722</span> contributors</div>
+        </div>
+      </div>
+      <div class="oss-card-visual">
+        <div class="line-comment">// sum.test.ts</div>
+        <div><span class="line-purple">import</span> { describe, it, expect } <span class="line-purple">from</span> <span class="line-green">'vitest'</span></div><br>
+        <div><span class="line-blue">describe</span>(<span class="line-green">'sum'</span>, () => {</div>
+        <div style="padding-left:1rem"><span class="line-blue">it</span>(<span class="line-green">'adds 1 + 2'</span>, () => {</div>
+        <div style="padding-left:2rem"><span class="line-blue">expect</span>(1 + 2).<span class="line-purple">toBe</span>(3)</div>
+        <div style="padding-left:1rem">})</div>
+        <div>})</div><br>
+        <div class="line-green">✓ sum › adds 1 + 2 (0.2ms)</div>
+      </div>
+    </div>
+
+    <!-- Rolldown -->
+    <div class="oss-card" id="tab-rolldown">
+      <div>
+        <div class="oss-card-badge">13.1k stars</div>
+        <div class="oss-card-title">The blazing fast JavaScript bundler</div>
+        <div class="oss-card-desc">Rolldown is a Rust-based bundler with Rollup-compatible API, and esbuild-equivalent performance. It powers Vite version 8 and above.</div>
+        <a class="oss-card-link" href="#">Explore Rolldown →</a>
+        <div class="oss-card-stats">
+          <div class="oss-stat"><span>13.1k</span> stars</div>
+          <div class="oss-stat"><span>160</span> contributors</div>
+        </div>
+      </div>
+      <div class="oss-card-visual">
+        <div class="line-comment">// rolldown.config.ts</div>
+        <div><span class="line-purple">import</span> { defineConfig } <span class="line-purple">from</span> <span class="line-green">'rolldown'</span></div><br>
+        <div><span class="line-purple">export default</span> <span class="line-blue">defineConfig</span>({</div>
+        <div style="padding-left:1rem"><span class="line-yellow">input</span>: <span class="line-green">'src/index.ts'</span>,</div>
+        <div style="padding-left:1rem"><span class="line-yellow">output</span>: { <span class="line-yellow">dir</span>: <span class="line-green">'dist'</span> }</div>
+        <div>})</div><br>
+        <div class="line-green">⚡ bundled in 18ms (Rust)</div>
+      </div>
+    </div>
+
+    <!-- Oxc -->
+    <div class="oss-card" id="tab-oxc">
+      <div>
+        <div class="oss-card-badge">20.0k stars</div>
+        <div class="oss-card-title">The fastest JavaScript language toolchain</div>
+        <div class="oss-card-desc">Oxc is the foundation of our unified toolchain. Includes linter (oxlint), formatter (oxfmt), parser, resolver, transformer, and minifier.</div>
+        <a class="oss-card-link" href="#">Explore Oxc →</a>
+        <div class="oss-card-stats">
+          <div class="oss-stat"><span>20.0k</span> stars</div>
+          <div class="oss-stat"><span>327</span> contributors</div>
+        </div>
+      </div>
+      <div class="oss-card-visual">
+        <div class="line-comment"># oxlint — 50-100x faster than ESLint</div><br>
+        <div><span class="line-green">$</span> <span class="line-blue">oxlint</span> <span class="line-purple">.</span></div>
+        <div class="line-comment">  Linting 3,248 files…</div><br>
+        <div class="line-green">  ✓ 0 errors, 0 warnings</div>
+        <div style="color:rgba(255,255,255,0.3)">  Finished in 0.38s</div><br>
+        <div class="line-comment"># vs ESLint: 24.2s → 0.38s</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- ─── STATS ─── -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-header">
+      <p class="section-sub">Trusted by millions of developers around the world</p>
+      <p style="font-family:var(--mono);font-size:0.75rem;color:var(--text-dim);margin-top:0.5rem;">###### Total downloads — ⚡ Vite Downloads</p>
+    </div>
+    <div class="stats-chart-area">
+      <div class="chart-bars" id="chartBars"></div>
+      <span class="chart-label">April 2020</span>
+      <span class="chart-label-right">Today</span>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-item"><div class="stat-num" id="stat1">0</div><div class="stat-label">Weekly NPM downloads</div></div>
+      <div class="stat-item"><div class="stat-num" id="stat2">0</div><div class="stat-label">GitHub Stars</div></div>
+      <div class="stat-item"><div class="stat-num" id="stat3">0</div><div class="stat-label">Contributors</div></div>
+      <div class="stat-item"><div class="stat-num" id="stat4">0</div><div class="stat-label">Active projects</div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- ─── MISSION ─── -->
+<section class="mission-section" id="about">
+  <div class="container">
+    <h2 class="section-title">Our mission is to make the next generation of JavaScript developers more productive than ever before.</h2>
+    <p class="section-sub">We believe in open source as the foundation of the modern web. Every tool we build is freely available for anyone to use, modify, and contribute to.</p>
+    <a class="mission-link" href="#" style="margin-top:1.5rem;">Learn more →</a>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- ─── INVESTORS ─── -->
+<section class="investors-section">
+  <div class="container">
+    <p class="investors-label">Backed by the very best in the dev tools space.</p>
+    <div class="investors-grid">
+      <div class="investor-item">Accel</div>
+      <div class="investor-item">Peak XV</div>
+      <div class="investor-item">Sunflower</div>
+      <div class="investor-item">Amplify</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- ─── BLOG ─── -->
+<section class="blog-section" id="blog">
+  <div class="container">
+    <div class="blog-header">
+      <div>
+        <span class="section-tag">Resources</span>
+        <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2rem);">Featured resources &amp; updates</h2>
+        <div class="blog-filter">
+          <span class="kw">resources</span>
+          .filter(i =&gt; i.collection === <span class="str">"featured"</span>)<br>
+          .filter(i =&gt; i.postedBy === <span class="str">"VoidZero"</span>)<br>
+          .filter(i =&gt; i.articles.length === <span class="num">8</span>)
+        </div>
+      </div>
+      <a class="blog-link-all" href="#">All Resources →</a>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card"><div class="blog-card-img-placeholder"></div><div class="blog-card-body"><div class="blog-card-tag">// updates</div><div class="blog-card-title">Tales from the Void: March Launch Week Recap</div></div></div>
+      <div class="blog-card"><div class="blog-card-img-placeholder" style="background:linear-gradient(135deg,#0a2818,#12101a,#0a1628)"></div><div class="blog-card-body"><div class="blog-card-tag">// announcements</div><div class="blog-card-title">Announcing Vite+ Alpha</div></div></div>
+      <div class="blog-card"><div class="blog-card-img-placeholder" style="background:linear-gradient(135deg,#1a1200,#12101a,#0a1628)"></div><div class="blog-card-body"><div class="blog-card-tag">// ecosystem</div><div class="blog-card-title">VoidZero and npmx: Building Better Tools Together</div></div></div>
+      <div class="blog-card"><div class="blog-card-img-placeholder" style="background:linear-gradient(135deg,#00181a,#12101a,#0a1628)"></div><div class="blog-card-body"><div class="blog-card-tag">// updates</div><div class="blog-card-title">What's New in ViteLand: February 2026 Recap</div></div></div>
+      <div class="blog-card"><div class="blog-card-img-placeholder" style="background:linear-gradient(135deg,#1a0a2e,#12101a,#0a1628)"></div><div class="blog-card-body"><div class="blog-card-tag">// updates</div><div class="blog-card-title">What's New in ViteLand: January 2026 Recap</div></div></div>
+      <div class="blog-card"><div class="blog-card-img-placeholder" style="background:linear-gradient(135deg,#1a0500,#12101a,#0a1628)"></div><div class="blog-card-body"><div class="blog-card-tag">// announcements</div><div class="blog-card-title">Announcing Rolldown 1.0 RC</div></div></div>
+      <div class="blog-card"><div class="blog-card-img-placeholder" style="background:linear-gradient(135deg,#001a0a,#12101a,#0a1628)"></div><div class="blog-card-body"><div class="blog-card-tag">// updates</div><div class="blog-card-title">What's New in ViteLand: December 2025 Recap</div></div></div>
+      <div class="blog-card"><div class="blog-card-img-placeholder" style="background:linear-gradient(135deg,#1a1600,#12101a,#0a1628)"></div><div class="blog-card-body"><div class="blog-card-tag">// announcements</div><div class="blog-card-title">Announcing Oxlint Type-Aware Linting Alpha</div></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- ─── NEWSLETTER ─── -->
+<section class="newsletter-section">
+  <div class="container">
+    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:0.5rem;">Interested in the future of Javascript tooling?</p>
+    <h2 class="section-title">Subscribe to our monthly newsletter</h2>
+    <div class="newsletter-form">
+      <input class="newsletter-input" type="email" placeholder="you@example.com" />
+      <button class="newsletter-btn">Subscribe</button>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-bg-img"></div>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <div class="footer-logo-mark">
+          <svg width="28" height="28" viewBox="0 0 74 74" fill="none">
+            <path d="M18.7802 19.7996C12.1769 29.2539 12.1384 43.9088 18.7802 53.3973H14.3173C7.674 43.9088 7.71252 29.2539 14.3173 19.7996H18.7802ZM59.6943 19.7996C66.2976 29.254 66.3362 43.9088 59.6943 53.3973H55.2314C61.875 43.9088 61.8363 29.254 55.2314 19.7996H59.6943ZM37.0058 19.8455C46.2593 19.8455 53.7586 27.3465 53.7587 36.5984C53.7587 45.8505 46.2578 53.3514 37.0058 53.3514C27.7538 53.3513 20.2529 45.8504 20.2529 36.5984C20.253 27.3465 27.7539 19.8456 37.0058 19.8455ZM47.2109 29.5613C46.9632 29.0063 46.2194 28.9031 45.8359 29.3748L31.3447 47.1473C30.9982 47.5742 31.1652 48.2126 31.6757 48.4168C33.1761 49.0169 34.9517 49.3142 37.0058 49.3143C44.6088 49.3143 48.455 45.2302 48.455 36.5984C48.455 33.763 48.0385 31.4238 47.2109 29.5613ZM37.0058 23.9295C29.3596 23.9295 25.5576 28.0133 25.5576 36.5984C25.5576 39.4447 25.9716 41.7964 26.8007 43.6697C27.0467 44.2265 27.7921 44.3298 28.1757 43.8582L42.6415 26.0848C42.9896 25.6578 42.8206 25.0169 42.3085 24.8143C40.8127 24.2218 39.0446 23.9295 37.0058 23.9295Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="footer-logo-name">VoidZero</div>
+        <p style="font-size:0.8rem;color:var(--text-dim);line-height:1.5;margin-top:0.25rem;">The JavaScript Tooling Company</p>
+      </div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="#">Void</a></li></ul></div>
+      <div class="footer-col"><h4>OSS</h4><ul><li><a href="#">Vite+</a></li><li><a href="#">Vite</a></li><li><a href="#">Vitest</a></li><li><a href="#">Rolldown</a></li><li><a href="#">Oxc</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="#">Blog</a></li><li><a href="#">About</a></li><li><a href="#">Branding</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Acceptable Use Policy</a></li></ul></div>
+      <div class="footer-col"><h4>Social</h4><ul><li><a href="#">GitHub</a></li><li><a href="#">X.com</a></li><li><a href="#">Discord</a></li><li><a href="#">Bluesky</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 VoidZero Inc. All Rights Reserved.</span>
+      <div style="display:flex;gap:1.5rem;">
+        <a href="#" style="color:var(--text-dim);transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">GitHub</a>
+        <a href="#" style="color:var(--text-dim);transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">X.com</a>
+        <a href="#" style="color:var(--text-dim);transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">Discord</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
