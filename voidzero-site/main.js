@@ -6,6 +6,32 @@
     btn.classList.add('active');
   }
 
+  // ── Smooth entrance animations
+  (function() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationDelay = '0s';
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, observerOptions);
+
+    // Add animation classes to sections
+    document.querySelectorAll('.oss-section, .stats-section, .mission-section, .investors-section, .blog-section, .newsletter-section').forEach(section => {
+      section.style.animation = 'fadeInUp 0.8s ease-out forwards';
+      section.style.animationPlayState = 'paused';
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(30px)';
+      observer.observe(section);
+    });
+  })();
+
   // ── Chart bars
   (function() {
     const bars = document.getElementById('chartBars');
