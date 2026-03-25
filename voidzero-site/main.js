@@ -1,4 +1,4 @@
-  // ── OSS tab switching
+﻿  // ΓöÇΓöÇ OSS tab switching
   function showTab(id, btn) {
     document.querySelectorAll('.oss-card').forEach(c => c.classList.remove('active'));
     document.querySelectorAll('.oss-tab').forEach(t => t.classList.remove('active'));
@@ -6,7 +6,7 @@
     btn.classList.add('active');
   }
 
-  // ── Smooth entrance animations
+  // ΓöÇΓöÇ Smooth entrance animations
   (function() {
     const observerOptions = {
       threshold: 0.1,
@@ -32,7 +32,7 @@
     });
   })();
 
-  // ── Chart bars
+  // ΓöÇΓöÇ Chart bars
   (function() {
     const bars = document.getElementById('chartBars');
     const N = 60;
@@ -48,7 +48,7 @@
     }
   })();
 
-  // ── Animated counters
+  // ΓöÇΓöÇ Animated counters
   function animateCounter(el, target, suffix, duration) {
     let start = 0;
     const step = target / (duration / 16);
@@ -64,23 +64,23 @@
   const obs = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting && !statsAnimated) {
       statsAnimated = true;
-      animateCounter(document.getElementById('stat1'), 28, 'M+', 1800);
-      animateCounter(document.getElementById('stat2'), 128, 'k+', 1800);
-      animateCounter(document.getElementById('stat3'), 2400, '+', 1800);
-      animateCounter(document.getElementById('stat4'), 5, '', 1200);
+      animateCounter(document.getElementById('stat1'), 14000, '+', 1800);
+      animateCounter(document.getElementById('stat2'), 95, '%', 1800);
+      animateCounter(document.getElementById('stat3'), 10000, '+', 1800);
+      animateCounter(document.getElementById('stat4'), 214, '', 1200);
     }
   }, { threshold: 0.3 });
   obs.observe(statsSection);
 
-  // ══════════════════════════════════════════════════════════
-  //  ISO STACK ANIMATION  — pixel-perfect VoidZero replica
-  // ══════════════════════════════════════════════════════════
+  // ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+  //  ISO STACK ANIMATION  ΓÇö pixel-perfect VoidZero replica
+  // ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
   (function () {
     const NS   = 'http://www.w3.org/2000/svg';
     const svg  = document.getElementById('isoCvs');
     const scene= document.getElementById('isoScene');
 
-    // SVG viewBox = 780 × 360
+    // SVG viewBox = 780 ├ù 360
     // Stack geometry
     const CX=390;       // horizontal center
     const TW=115;       // half-width of rhombus
@@ -91,13 +91,13 @@
 
     // Stack top (layer NL-1) face center Y in SVG coords.
     // We want the whole stack centered in the 360px viewBox.
-    // Stack visual height ≈ TH (top diamond) + NL*FH (sides) + (NL-1)*LS (gaps) + TH (bottom)
-    // ≈ 66 + 6*13 + 5*17 + 66 = 66+78+85+66 = 295px
-    // Center = 360/2 = 180. Top of topmost face = 180 - 295/2 ≈ 33.
+    // Stack visual height Γëê TH (top diamond) + NL*FH (sides) + (NL-1)*LS (gaps) + TH (bottom)
+    // Γëê 66 + 6*13 + 5*17 + 66 = 66+78+85+66 = 295px
+    // Center = 360/2 = 180. Top of topmost face = 180 - 295/2 Γëê 33.
     // Top face center (layer NL-1) CY = 33 + TH = 99
     // Bottom of stack bottom = 99 + (NL-1)*LS + NL*FH + TH = 99+85+78+66 = 328 (leaves 32px below)
     const BASE_CY = 88; // CY of the top face of the topmost slab (layer index NL-1)
-    // lcy(i) = BASE_CY + (NL-1-i)*LS  → higher layers = lower cy = higher on screen
+    // lcy(i) = BASE_CY + (NL-1-i)*LS  ΓåÆ higher layers = lower cy = higher on screen
     function lcy(i, offs) {
       return BASE_CY + (NL-1-i)*LS + (offs[i]||0);
     }
@@ -147,7 +147,7 @@
       f.appendChild(svgel('feDropShadow',{dx:'0',dy:'6',stdDeviation:'9','flood-color':'rgba(0,0,0,0.15)'}));
       defs.appendChild(f); svg.appendChild(defs);
       LG=[];
-      // Draw layers bottom→top so higher layers paint over lower ones
+      // Draw layers bottomΓåÆtop so higher layers paint over lower ones
       for(let i=0;i<NL;i++){const g=svgel('g');svg.appendChild(g);LG.push(g);}
       CG=svgel('g'); svg.appendChild(CG);
     }
@@ -174,7 +174,7 @@
 
     function drawLayers(ti, offs){
       const T=TOOLS[ti], aL=T.li;
-      // Paint bottom→top for correct z-order
+      // Paint bottomΓåÆtop for correct z-order
       for(let i=0;i<NL;i++){
         const g=LG[i]; g.innerHTML='';
         const cy=lcy(i,offs), cx=CX, act=(i===aL);
@@ -199,10 +199,10 @@
         if(i===NL-1&&!act) drawIcon(g,cx,cy,'viteplus',0.2);
       }
 
-      // SVG connector lines: pill-edge → iso vertex
+      // SVG connector lines: pill-edge ΓåÆ iso vertex
       CG.innerHTML='';
       // In SVG coords: left vertex = CX-TW = 390-115 = 275; right = CX+TW = 505
-      // Pill right-edge (left pills) in SVG ≈ x=110; pill left-edge (right pills) ≈ x=670
+      // Pill right-edge (left pills) in SVG Γëê x=110; pill left-edge (right pills) Γëê x=670
       const LV=275, RV=505, PL=110, PR=670;
       LBLS.forEach(lbl=>{
         const cy=lcy(lbl.li,offs);
@@ -249,7 +249,7 @@
       const scY=sH/360, scX=sW/780;
       LBLS.forEach(lbl=>{
         const p=PELS[lbl.id]; if(!p) return;
-        // SVG cy → scene px. Subtract half pill height (~11px) to center vertically.
+        // SVG cy ΓåÆ scene px. Subtract half pill height (~11px) to center vertically.
         const topPx = lcy(lbl.li,offs)*scY - 11;
         p.style.top = topPx+'px';
         p.classList.toggle('on', T.id===lbl.id);
@@ -296,12 +296,12 @@
     requestAnimationFrame(tick);
   })();
 
-  // ── Newsletter submit
-    // ── Newsletter submit
+  // ΓöÇΓöÇ Newsletter submit
+    // ΓöÇΓöÇ Newsletter submit
   document.querySelector('.newsletter-btn').addEventListener('click', function() {
     const input = document.querySelector('.newsletter-input');
     if (input.value && input.value.includes('@')) {
-      this.textContent = '✓ Subscribed!';
+      this.textContent = 'Γ£ô Subscribed!';
       this.style.background = '#4ade80';
       input.value = '';
       setTimeout(() => { this.textContent = 'Subscribe'; this.style.background = ''; }, 3000);

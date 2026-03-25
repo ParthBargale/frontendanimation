@@ -1,6 +1,6 @@
-# VoidZero Website Clone
+# Futuremind Infotech Solutions Website
 
-A pixel-perfect clone of [voidzero.dev](https://voidzero.dev) built with pure HTML, CSS, and JavaScript — no frameworks, no dependencies.
+A website for Futuremind Infotech Solutions, a leading software training institute offering hands-on courses in Web Development, UI/UX Design, and emerging technologies.
 
 ## Project Structure
 
@@ -8,25 +8,21 @@ A pixel-perfect clone of [voidzero.dev](https://voidzero.dev) built with pure HT
 voidzero-site/
 ├── index.html     → Main HTML structure & all sections
 ├── styles.css     → All styles, CSS variables, animations, responsive layout
-├── main.js        → All JavaScript: ISO animation, tabs, counters, marquee
+├── main.js        → All JavaScript: animations and interactions
 └── README.md      → This file
 ```
 
 ## Features
 
-- **Fixed glassmorphism navbar** with live server badge
-- **Announcement bar** with Vite+ alpha announcement
-- **Hero section** with radial glow + CSS grid background
-- **Infinite logo marquee** (Shopify, OpenAI, Framer, Linear, etc.)
-- **Isometric 3D Stack Animation** — cycles through Vite → Rolldown → Oxc → Vite+
-  - Layer lift/explode with easing
-  - Spinning dashed ring + counter-rotating tool icons
-  - Active pill labels (left & right) with connector lines
-  - Sublabel text per tool (build tool, bundler, etc.)
-- **OSS section** with 5 interactive tabs + terminal code previews
-- **Stats section** with animated bar chart + scroll-triggered counters
-- **Mission, Investors, Blog (8 cards), Newsletter, Footer**
-- Fully responsive down to mobile
+- **Navigation bar** with company name and links
+- **Hero section** with tagline and key stats
+- **Courses section** showcasing various training programs
+- **Stats section** with achievements and numbers
+- **Testimonials** from successful students
+- **About section** with company information
+- **Blog section** with latest news and articles
+- **Registration form** for course enrollment
+- **Footer** with links, contact info, and social media
 
 ## How to Run
 
@@ -46,5 +42,5 @@ start index.html
 
 - **HTML5** — semantic structure
 - **CSS3** — custom properties, keyframe animations, grid, flexbox
-- **Vanilla JS** — SVG manipulation, requestAnimationFrame loop, IntersectionObserver
+- **Vanilla JS** — animations and interactions
 - **Google Fonts** — DM Sans + DM Mono
