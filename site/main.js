@@ -6,6 +6,12 @@
     btn.classList.add('active');
   }
 
+  // ΓöÇΓöÇ FAQ toggle
+  function toggleFAQ(btn) {
+    const item = btn.parentElement;
+    item.classList.toggle('active');
+  }
+
   // ΓöÇΓöÇ Smooth entrance animations
   (function() {
     const observerOptions = {
@@ -111,6 +117,7 @@
     // Labels: left side (L) and right side (R)
     // li = layer index whose Y they track
     const LBLS=[
+      {id:'futuremind', name:'Futuremind',  side:'L', li:6},
       {id:'viteplus', name:'VITE+',    side:'L', li:5},
       {id:'vite',     name:'VITE',     side:'L', li:3},
       {id:'oxc',      name:'OXC',      side:'L', li:1},
@@ -134,8 +141,10 @@
       s.textContent=
         `@keyframes rCW {from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
          @keyframes rCCW{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
-         .iR{transform-box:fill-box;transform-origin:center;animation:rCW  4.5s linear infinite;}
-         .iI{transform-box:fill-box;transform-origin:center;animation:rCCW 7s   linear infinite;}`;
+         @keyframes stackRotate{from{transform:rotateY(0deg)}to{transform:rotateY(360deg)}}
+         .iR{transform-box:fill-box;transform-origin:center;animation:rCW  4.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;}
+         .iI{transform-box:fill-box;transform-origin:center;animation:rCCW 7s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;}
+         #isoCvs{animation:stackRotate 8s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;transform-style:preserve-3d;}`;
       document.head.appendChild(s);
     }
 
@@ -232,8 +241,14 @@
         const p=document.createElement('div');
         p.className='iso-pill'; p.id='ip-'+lbl.id;
         p.innerHTML=(icons[lbl.id]||'')+' '+lbl.name;
-        if(lbl.side==='L') p.style.left='0';
-        else{ p.style.right='0'; p.style.flexDirection='row-reverse'; }
+        if(lbl.side==='L') { 
+          p.style.left='-190px'; 
+          p.style.flexDirection='row'; 
+        }
+        else{ 
+          p.style.right='-190px'; 
+          p.style.flexDirection='row-reverse'; 
+        }
         scene.appendChild(p);
         PELS[lbl.id]=p;
       });
